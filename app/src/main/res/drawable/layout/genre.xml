@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class ="GenresDataBinding">
+        <variable
+            name="genres"
+            type="com.codeinger.moviestack.pojo.MovieInfo.Genre"/>
+
+        <variable
+            name="type"
+            type="com.codeinger.moviestack.ui.moviedetail.DetailData.Type"/>
+
+        <import type="com.codeinger.moviestack.api.NetworkConstants"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:setGenreOnclick="@{genres.id}"
+        app:genreOnclickType="@{type}"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{genres.name}"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColor="@color/light_gray"
+            android:textSize="16sp"
+            android:background="@drawable/round_genres_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
